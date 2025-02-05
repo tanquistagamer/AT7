@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT7 Web</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <!-- Font Awesome para iconos -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🔹 Barra de Navegación -->
+    <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-90 text-white flex justify-between items-center px-10 py-3 z-50">
+        <div class="text-2xl font-bold text-green-500 flex items-center">
+            <img src="logo.png" alt="AT7 Logo" class="h-8 mr-2"> AT7
+        </div>
+        <ul class="hidden lg:flex space-x-6 uppercase text-sm tracking-wide">
+            <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
+            <li><a href="#" class="hover:text-green-400 transition">About Us</a></li>
+            <li><a href="#" class="hover:text-green-400 transition">Projects</a></li>
+            <li><a href="#" class="hover:text-green-400 transition">Services</a></li>
+            <li><a href="#" class="hover:text-green-400 transition">Contact Us</a></li>
+        </ul>
+        <div class="flex space-x-5 items-center">
+            <a href="#" class="hover:text-green-400 transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="hover:text-green-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" class="hover:text-green-400 transition"><i class="fa-brands fa-patreon"></i></a>
+            <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-store"></i></a>
+            <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-moon"></i></a>
+            <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-globe"></i></a>
+        </div>
+    </nav>
+
+    <!-- 🔹 Contenedor del Slider -->
+    <div id="slider-container">
+        <div id="slider">
+            <div class="slide"><img src="https://picsum.photos/1920/1080?random=1"></div>
+            <div class="slide"><img src="https://picsum.photos/1920/1080?random=2"></div>
+            <div class="slide"><img src="https://picsum.photos/1920/1080?random=3"></div>
+        </div>
+
+        <!-- 🔹 Contenido en la parte inferior izquierda -->
+        <div id="slider-content">
+            <h1>POWERED BY CREATIVITY</h1>
+            <p>The artistic world's revolution has arrived</p>
+            <button id="contact-btn">Contact us</button>
+        </div>
+
+        <!-- 🔹 Botones de Navegación -->
+        <button id="prevBtn">❮</button>
+        <button id="nextBtn">❯</button>
+
+        <!-- 🔹 Indicadores del Slider -->
+        <div id="indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+        </div>
+    </div>
+
+    <!-- Librerías -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
