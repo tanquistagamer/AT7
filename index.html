@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- 🔹 Agregar Favicon -->
+<link rel="icon" type="image/png" href="images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT7 Web</title>
@@ -22,7 +24,8 @@
     <!-- 🔹 Barra de Navegación -->
     <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-90 text-white flex justify-between items-center px-10 py-3 z-50">
         <div class="text-2xl font-bold text-green-500 flex items-center">
-            <img src="logo.png" alt="AT7 Logo" class="h-8 mr-2"> AT7
+            <img src="images/logo.png" alt="AT7 Logo" class="h-8 mr-2"> AT7
+            <div class="navbar-divider"></div>
         </div>
         <ul class="hidden lg:flex space-x-6 uppercase text-sm tracking-wide">
             <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
@@ -32,21 +35,23 @@
             <li><a href="#" class="hover:text-green-400 transition">Contact Us</a></li>
         </ul>
         <div class="flex space-x-5 items-center">
+            <div class="navbar-divider"></div> <!-- Línea verde antes de los iconos -->
             <a href="#" class="hover:text-green-400 transition"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" class="hover:text-green-400 transition"><i class="fa-brands fa-linkedin"></i></a>
             <a href="#" class="hover:text-green-400 transition"><i class="fa-brands fa-patreon"></i></a>
             <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-store"></i></a>
+            <div class="navbar-divider"></div>
             <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-moon"></i></a>
-            <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-globe"></i></a>
+            <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-globe"></i></a>    
         </div>
     </nav>
 
     <!-- 🔹 Contenedor del Slider -->
     <div id="slider-container">
         <div id="slider">
-            <div class="slide"><img src="https://picsum.photos/1920/1080?random=1"></div>
-            <div class="slide"><img src="https://picsum.photos/1920/1080?random=2"></div>
-            <div class="slide"><img src="https://picsum.photos/1920/1080?random=3"></div>
+            <div class="slide"><img src="images/imagen1.jpg" alt="Imagen 1"></div>
+            <div class="slide"><img src="images/imagen2.jpg" alt="Imagen 2"></div>
+            <div class="slide"><img src="images/imagen3.jpg" alt="Imagen 3"></div>
         </div>
 
         <!-- 🔹 Contenido en la parte inferior izquierda -->

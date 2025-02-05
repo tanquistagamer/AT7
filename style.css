@@ -1,4 +1,4 @@
-/* Contenedor del Slider */
+/* 🔹 Contenedor del Slider */
 #slider-container {
     position: relative;
     width: 100%;
@@ -6,10 +6,10 @@
     overflow: hidden;
 }
 
-/* Slider con animación de desplazamiento */
+/* 🔹 Slider con animación de desplazamiento */
 #slider {
     display: flex;
-    width: 300%; /* Ajustado para 3 imágenes */
+    width: 300%;
     height: 100%;
     transition: transform 0.5s ease-in-out;
 }
@@ -26,18 +26,17 @@
     object-fit: cover;
 }
 
-/* Contenido en la parte inferior izquierda */
+/* 🔹 Contenido del Slider (Texto y Botón) */
 #slider-content {
     position: absolute;
-    bottom: 8%;
+    bottom: 8%; /* Ajustado para bajar más */
     left: 5%;
     text-align: left;
     color: white;
-    max-width: 40%;
+    max-width: 50%;
     z-index: 10;
 }
 
-/* Estilos del título */
 #slider-content h1 {
     font-size: 3.5rem;
     font-weight: 800;
@@ -46,28 +45,30 @@
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Estilos del subtítulo */
 #slider-content p {
     font-size: 1.3rem;
     margin-top: 10px;
     opacity: 0.9;
 }
 
-/* Botón de Contacto */
+/* 🔹 Botón de Contacto*/
 #contact-btn {
-    position: relative;
-    bottom: -30px;
-    margin-top: 15px;
-    padding: 12px 28px;
-    font-size: 1.2rem;
+    margin-top: 100px; /* Lo bajamos más */
+    padding: 14px 40px;
+    font-size: 1.3rem;
     font-weight: bold;
     background: white;
     color: black;
     border: none;
-    border-radius: 30px;
+    border-radius: 50px;
     transition: 0.3s ease-in-out;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    display: inline-block;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 150px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 #contact-btn:hover {
@@ -75,35 +76,50 @@
     transform: scale(1.05);
 }
 
-/* Botones de Slider */
+/* 🔹 Botones de Navegación del Slider */
 button {
-    font-size: 24px;
-    padding: 12px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
+    padding: 15px;
+    background-color: transparent; 
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
 }
 
+/* 🔹 Botón Izquierdo */
 #prevBtn {
     left: 20px;
+    background-image: url('images/logo.png'); /* Imagen logo de AT7 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+/* 🔹 Botón Derecho */
 #nextBtn {
     right: 20px;
+    background-image: url('images/logo.png'); /* Imagen logo de AT7 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
+/* 🔹 Efecto Hover en los Botones */
 button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
+    transform: translateY(-50%) scale(1.1);
+    opacity: 0.7;
 }
 
-/* Indicadores del Slider */
+/* 🔹 Indicadores del Slider */
 #indicators {
     position: absolute;
     bottom: 20px;
@@ -114,8 +130,8 @@ button:hover {
 }
 
 .indicator {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     background-color: gray;
     border-radius: 50%;
     cursor: pointer;
@@ -124,4 +140,11 @@ button:hover {
 
 .indicator.active {
     background-color: limegreen;
+}
+/* 🔹 Estilos para las líneas verdes */
+.navbar-divider {
+    height: 40px; /* Ajusta la altura */
+    width: 2px; /* Grosor de la línea */
+    background-color: #00ff00; /* Color verde neón */
+    margin: 0 20px; /* Espaciado entre los elementos */
 }

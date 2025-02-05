@@ -6,11 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let indicators = document.querySelectorAll(".indicator");
     let index = 0;
     let totalSlides = slides.length;
+    let autoSlide;
 
     // Función para actualizar el slider
     function updateSlider() {
-        slider.style.transform = `translateX(-${index * 100}%)`;
+        slider.style.transform = `translateX(-${index * 100}vw)`;
         updateIndicators();
+        resetAutoSlide();
     }
 
     // Función para actualizar los indicadores
@@ -23,15 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Botón anterior
+    // Función para mover al slide anterior
     prevBtn.addEventListener("click", function () {
-        index = index > 0 ? index - 1 : totalSlides - 1;
+        index = (index > 0) ? index - 1 : totalSlides - 1;
         updateSlider();
     });
 
-    // Botón siguiente
+    // Función para mover al slide siguiente
     nextBtn.addEventListener("click", function () {
-        index = index < totalSlides - 1 ? index + 1 : 0;
+        index = (index < totalSlides - 1) ? index + 1 : 0;
         updateSlider();
     });
 
@@ -43,9 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Cambio automático cada 7 segundos
-    setInterval(() => {
-        index = (index + 1) % totalSlides;
-        updateSlider();
-    }, 7000);
+    // Función para iniciar el cambio automático cada 7 segundos
+    function startAutoSlide() {
+        autoSlide = setInterval(() => {
+            index = (index + 1) % totalSlides;
+            updateSlider();
+        }, 7000);
+    }
+
+    // Función para resetear el temporizador cuando el usuario interactúa
+    function resetAutoSlide() {
+        clearInterval(autoSlide);
+        startAutoSlide();
+    }
+
+    // Iniciar el slider automático
+    startAutoSlide();
 });
