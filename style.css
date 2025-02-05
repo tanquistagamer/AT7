@@ -53,8 +53,8 @@
 
 /* 🔹 Botón de Contacto*/
 #contact-btn {
-    margin-top: 100px; /* Lo bajamos más */
-    padding: 14px 40px;
+    margin-top: 90px; /* Lo bajamos más */
+    padding: 14px 30px;
     font-size: 1.3rem;
     font-weight: bold;
     background: white;
@@ -147,4 +147,170 @@ button:hover {
     width: 2px; /* Grosor de la línea */
     background-color: #00ff00; /* Color verde neón */
     margin: 0 20px; /* Espaciado entre los elementos */
+}
+/* 🔹 Sección About Us */
+#about-us {
+    background-color: black;
+    padding: 60px 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* 🔹 Imagen */
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* 🔹 Texto */
+.about-text {
+    flex: 1;
+    color: white;
+    padding-left: 40px;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* 🔹 Palabras resaltadas en verde */
+.highlight-green {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-text {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
+/* 🔹 Sección de Misión y Visión */
+#mission-vision {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: black;
+    padding: 60px 10%;
+    flex-wrap: wrap;
+}
+
+.mission, .vision {
+    flex: 1;
+    max-width: 500px;
+    color: white;
+}
+
+.mission h2, .vision h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.mission p, .vision p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* 🔹 Texto en verde */
+.highlight-green {
+    color: #00ff00;
+    font-weight: bold;
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 900px) {
+    #mission-vision {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mission, .vision {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+}
+/* 🔹 Sección de Valores */
+#values {
+    text-align: center;
+    background-color: black;
+    padding: 60px 10%;
+}
+
+#values h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* 🔹 Contenedor de los valores */
+.values-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* 🔹 Cada ítem */
+.value-item {
+    text-align: center;
+    width: 120px;
+    color: white;
+}
+
+.value-item img {
+    width: 100%;
+    max-width: 120px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s;
+}
+
+.value-item img:hover {
+    transform: scale(1.1);
+}
+
+.value-item p {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* 🔹 Responsividad */
+@media (max-width: 900px) {
+    .values-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
