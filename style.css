@@ -314,3 +314,71 @@ button:hover {
         align-items: center;
     }
 }
+#values-slider-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#values-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+#values-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.value-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.value-slide {
+    width: 20%;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.value-slide img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 15px;
+}
+
+#values-prevBtn {
+    left: -50px;
+}
+
+#values-nextBtn {
+    right: -50px;
+}
+/* 🔹 Estilos para los indicadores del slider de valores */
+#values-indicators {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centra los indicadores horizontalmente */
+    gap: 10px;
+}
+
+#values-indicators .indicator {
+    width: 12px;
+    height: 12px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#values-indicators .indicator.active {
+    background-color: limegreen;
+    transform: scale(1.2);
+}

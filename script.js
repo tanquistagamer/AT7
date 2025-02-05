@@ -62,3 +62,50 @@ document.addEventListener("DOMContentLoaded", function () {
     // Iniciar el slider automático
     startAutoSlide();
 });
+document.addEventListener("DOMContentLoaded", function () {
+    let valuesSlider = document.getElementById("values-slider");
+    let valuesPrevBtn = document.getElementById("values-prevBtn");
+    let valuesNextBtn = document.getElementById("values-nextBtn");
+    let valuesIndicators = document.querySelectorAll("#values-indicators .indicator");
+    let valuesIndex = 0;
+    let totalValuesGroups = 4; // Debe coincidir con el número de indicadores
+
+    function updateValuesSlider() {
+        console.log("Moviendo a grupo: " + valuesIndex);
+        valuesSlider.style.transform = `translateX(-${valuesIndex * 100}%)`;
+        updateValuesIndicators();
+    }
+
+    function updateValuesIndicators() {
+        valuesIndicators.forEach((dot, i) => {
+            dot.classList.remove("active");
+            if (i === valuesIndex) {
+                dot.classList.add("active");
+            }
+        });
+    }
+
+    valuesPrevBtn.addEventListener("click", function () {
+        console.log("Botón Anterior Clicked");
+        valuesIndex = valuesIndex > 0 ? valuesIndex - 1 : totalValuesGroups - 1;
+        updateValuesSlider();
+    });
+
+    valuesNextBtn.addEventListener("click", function () {
+        console.log("Botón Siguiente Clicked");
+        valuesIndex = valuesIndex < totalValuesGroups - 1 ? valuesIndex + 1 : 0;
+        updateValuesSlider();
+    });
+
+    valuesIndicators.forEach(dot => {
+        dot.addEventListener("click", function () {
+            valuesIndex = parseInt(this.getAttribute("data-index"));
+            updateValuesSlider();
+        });
+    });
+// Función para iniciar el cambio automático cada 7 segundos
+    setInterval(() => {
+        valuesIndex = (valuesIndex + 1) % totalValuesGroups;
+        updateValuesSlider();
+    }, 7000);
+});
