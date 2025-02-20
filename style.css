@@ -29,7 +29,7 @@
 /* 🔹 Contenido del Slider (Texto y Botón) */
 #slider-content {
     position: absolute;
-    bottom: 8%; /* Ajustado para bajar más */
+    bottom: 13%; 
     left: 5%;
     text-align: left;
     color: white;
@@ -53,27 +53,27 @@
 
 /* 🔹 Botón de Contacto*/
 #contact-btn {
-    margin-top: 90px; /* Lo bajamos más */
-    padding: 14px 30px;
-    font-size: 1.3rem;
+    margin-top: 120px; 
+    padding: 10px 20px;
+    font-size: 1rem;
     font-weight: bold;
     background: white;
     color: black;
     border: none;
-    border-radius: 50px;
+    border-radius: 40px;
     transition: 0.3s ease-in-out;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 150px;
+    min-width: 120px;
     text-align: center;
     white-space: nowrap;
 }
 
 #contact-btn:hover {
     background: #e0e0e0;
-    transform: scale(1.05);
+    transform: scale(.9);
 }
 
 /* 🔹 Botones de Navegación del Slider */
@@ -115,7 +115,7 @@ button {
 
 /* 🔹 Efecto Hover en los Botones */
 button:hover {
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(0.5);
     opacity: 0.7;
 }
 
@@ -143,10 +143,10 @@ button:hover {
 }
 /* 🔹 Estilos para las líneas verdes */
 .navbar-divider {
-    height: 40px; /* Ajusta la altura */
-    width: 2px; /* Grosor de la línea */
-    background-color: #00ff00; /* Color verde neón */
-    margin: 0 20px; /* Espaciado entre los elementos */
+    height: 40px; 
+    width: 2px; 
+    background-color: #00ff00; 
+    margin: 0 20px; 
 }
 /* 🔹 Sección About Us */
 #about-us {
@@ -285,8 +285,8 @@ button:hover {
 /* 🔹 Cada ítem */
 .value-item {
     text-align: center;
-    width: 120px;
-    color: white;
+    width: 100px;
+    color: rgb(255, 255, 255);
 }
 
 .value-item img {
@@ -382,3 +382,118 @@ button:hover {
     background-color: limegreen;
     transform: scale(1.2);
 }
+/* Estilos generales */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+h1 {
+    font-size: 3em; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+/* Diseño de la cuadrícula */
+.talent-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas de talento */
+.talent-card {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+/* Imágenes dentro de las tarjetas */
+.talent-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Títulos dentro de las tarjetas */
+.talent-card h2 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Texto dentro de las tarjetas */
+.talent-card p {
+    font-size: 0.9em;
+}
+
+/* Destacar la palabra EMPODERAR en verde */
+.empoderar {
+    color: limegreen;
+    font-weight: bold;
+}
+/* Sección de colaboradores */
+.collaborators-section {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.collaborators-section h2 {
+    font-size: 2em;
+    color: #777; /* Color gris similar al de la imagen */
+    text-transform: uppercase;
+}
+
+.collaborators-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.collaborators-grid img {
+    height: 50px; /* Ajusta el tamaño según sea necesario */
+    opacity: 0.7; /* Da un efecto de transparencia */
+    transition: opacity 0.3s ease;
+}
+
+.collaborators-grid img:hover {
+    opacity: 1; /* Hace que los logos sean más visibles al pasar el mouse */
+}
+.studio-video-section {
+    position: relative;
+    text-align: center;
+    background-color: black;
+    padding: 50px 0;
+}
+.studio-video {
+    width: 100%;
+    height: 100vh; /* Mantiene la altura completa */
+    object-fit: cover; /* Asegura que el video llene bien la forma */
+    
+    -webkit-mask-image: url('../images/logo-7.png'); 
+    mask-image: url('../images/logo-7.png'); 
+
+    -webkit-mask-size: 80%; /* Reduce el tamaño de la máscara */
+    mask-size: 60%;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center center;
+    mask-position: center center;
+}
+
+
