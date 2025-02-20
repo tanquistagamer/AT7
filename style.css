@@ -115,7 +115,7 @@ button {
 
 /* 🔹 Efecto Hover en los Botones */
 button:hover {
-    transform: translateY(-50%) scale(0.5);
+    transform: translateY(-50%) scale(0.85);
     opacity: 0.7;
 }
 
