@@ -109,3 +109,122 @@ document.addEventListener("DOMContentLoaded", function () {
         updateValuesSlider();
     }, 7000);
 });
+let slideIndex = 0;
+const slides = document.querySelectorAll(".carousel-item");
+const indicators = document.querySelectorAll(".indicator");
+
+function showSlides(index) {
+    slides.forEach((slide, i) => {
+        slide.style.display = (i === index) ? "block" : "none";
+        slide.style.opacity = (i === index) ? "1" : "0";
+        indicators[i].classList.toggle("active", i === index);
+    });
+}
+
+function moveSlide(step) {
+    slideIndex += step;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    showSlides(slideIndex);
+}
+
+function currentSlide(index) {
+    slideIndex = index;
+    showSlides(slideIndex);
+}
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prev = document.getElementById('prev-slide');
+    const next = document.getElementById('next-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    let currentIndex = 0;
+    let interval;
+
+    function showSlide(index) {
+        slides.forEach((slide, idx) => {
+            slide.classList.remove('active');
+            indicators[idx].classList.remove('active');
+            if (idx === index) {
+                slide.classList.add('active');
+                indicators[idx].classList.add('active');
+            }
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+    }
+
+    next.addEventListener('click', nextSlide);
+    prev.addEventListener('click', prevSlide);
+
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', () => {
+            currentIndex = parseInt(indicator.dataset.slide);
+            showSlide(currentIndex);
+        });
+    });
+
+    function startAutoSlide() {
+        interval = setInterval(nextSlide, 7000);
+    }
+
+    function resetInterval() {
+        clearInterval(interval);
+        startAutoSlide();
+    }
+
+    [next, prev, ...indicators].forEach(control => {
+        control.addEventListener('click', resetInterval);
+    });
+
+    startAutoSlide();
+});
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".carousel-slide");
+    let indicators = document.querySelectorAll(".carousel-indicators .indicator");
+    let currentSlide = 0;
+    const slideInterval = 7000;
+  
+    function showSlide(index) {
+      slides.forEach((slide, idx) => {
+        slide.classList.toggle("active", idx === index);
+      });
+  
+      indicators.forEach((indicator, idx) => {
+        indicator.classList.toggle("active", idx === index);
+      });
+    }
+  
+    document.getElementById("prev-slide").addEventListener("click", function () {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+  
+    document.getElementById("next-slide").addEventListener("click", function () {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+  
+    indicators.forEach((indicator, idx) => {
+      indicator.addEventListener("click", function () {
+        currentSlide = idx;
+        showSlide(currentSlide);
+      });
+    });
+  
+    setInterval(function () {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, slideInterval);
+  
+    showSlide(currentSlide);
+  });
+  
+
