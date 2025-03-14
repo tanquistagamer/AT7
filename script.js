@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateSlider() {
         slider.style.transform = `translateX(-${index * 100}vw)`;
         updateIndicators();
-        resetAutoSlide();
     }
 
     // Función para actualizar los indicadores
     function updateIndicators() {
         indicators.forEach((dot, i) => {
+            console.log(i + " is the new active.");
             dot.classList.remove("active");
             if (i === index) {
                 dot.classList.add("active");
@@ -29,19 +29,23 @@ document.addEventListener("DOMContentLoaded", function () {
     prevBtn.addEventListener("click", function () {
         index = (index > 0) ? index - 1 : totalSlides - 1;
         updateSlider();
+        resetAutoSlide();
     });
 
     // Función para mover al slide siguiente
     nextBtn.addEventListener("click", function () {
         index = (index < totalSlides - 1) ? index + 1 : 0;
         updateSlider();
+        resetAutoSlide();
     });
 
     // Hacer que los indicadores sean interactivos
     indicators.forEach(dot => {
         dot.addEventListener("click", function () {
             index = parseInt(this.getAttribute("data-index"));
+            //console.log("Click on " + index + " indicator.");
             updateSlider();
+            resetAutoSlide();
         });
     });
 
@@ -62,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Iniciar el slider automático
     startAutoSlide();
 });
+
 document.addEventListener("DOMContentLoaded", function () {
     let valuesSlider = document.getElementById("values-slider");
     let valuesPrevBtn = document.getElementById("values-prevBtn");
