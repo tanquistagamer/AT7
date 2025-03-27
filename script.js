@@ -231,5 +231,5 @@ document.addEventListener("DOMContentLoaded", function () {
   
     showSlide(currentSlide);
   });
-  
+
 

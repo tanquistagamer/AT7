@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AT7 Web</title>
 
     <!-- Roboto Flex Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
-        rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Ethnocentric Font -->
-        <link rel="stylesheet" href="font/AT7_Site/AT7_Site.css">
+    <link rel="stylesheet" href="font/AT7_Site/AT7_Site.css" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,69 +23,96 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 
     <!-- Custom code -->
-    <link rel="stylesheet" href="style-test.css">
+    <link rel="stylesheet" href="style-test.css" />
     <script src="script-test.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Barra de Navegación -->
     <nav
-        class="fixed top-0 left-0 w-full bg-black bg-opacity-90 text-white flex justify-between items-center px-10 py-3 z-50">
-        <div class="text-2xl font-bold text-green-500 flex items-center">
-            <img src="images/logo.png" alt="AT7 Logo" class="h-8 mr-2"> AT7
-            <div class="navbar-divider"></div>
-        </div>
-        <ul class="hidden lg:flex space-x-6 uppercase text-sm tracking-wide">
-            <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
-            <li><a href="#" class="hover:text-green-400 transition">About Us</a></li>
-            <li><a href="#" class="hover:text-green-400 transition">Projects</a></li>
-            <li><a href="#" class="hover:text-green-400 transition">Services</a></li>
-            <li><a href="#" class="hover:text-green-400 transition">Contact Us</a></li>
-        </ul>
-        <div class="flex space-x-5 items-center">
-            <div class="navbar-divider"></div> <!-- Línea verde antes de los iconos -->
-            <a href="https://www.instagram.com/at7.studio_" class="hover:text-green-400 transition"><i
-                    class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/at7-studio/" class="hover:text-green-400 transition"><i
-                    class="fa-brands fa-linkedin"></i></a>
-            <a href="https://www.patreon.com/AT7Studio" class="hover:text-green-400 transition"><i
-                    class="fa-brands fa-patreon"></i></a>
-            <a href="https://www.webtoons.com/p/community/es/u/at7studio" class="hover:text-green-400 transition"><i
-                    class="fa-solid fa-store"></i></a>
-            <div class="navbar-divider"></div>
-            <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-moon"></i></a>
-            <a href="#" class="hover:text-green-400 transition"><i class="fa-solid fa-globe"></i></a>
-        </div>
+      class="fixed top-0 left-0 w-full bg-black bg-opacity-90 text-white flex justify-between items-center px-10 py-3 z-50"
+    >
+      <div class="text-2xl font-bold text-green-500 flex items-center">
+        <img src="images/logo.png" alt="AT7 Logo" class="h-8 mr-2" /> AT7
+        <div class="navbar-divider"></div>
+      </div>
+      <ul class="hidden lg:flex space-x-6 uppercase text-sm tracking-wide">
+        <li><a href="#" class="hover:text-green-400 transition">Home</a></li>
+        <li>
+          <a href="#" class="hover:text-green-400 transition">About Us</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-green-400 transition">Projects</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-green-400 transition">Services</a>
+        </li>
+        <li>
+          <a href="#" class="hover:text-green-400 transition">Contact Us</a>
+        </li>
+      </ul>
+      <div class="flex space-x-5 items-center">
+        <div class="navbar-divider"></div>
+        <!-- Línea verde antes de los iconos -->
+        <a
+          href="https://www.instagram.com/at7.studio_"
+          class="hover:text-green-400 transition"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/at7-studio/"
+          class="hover:text-green-400 transition"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a
+          href="https://www.patreon.com/AT7Studio"
+          class="hover:text-green-400 transition"
+          ><i class="fa-brands fa-patreon"></i
+        ></a>
+        <a
+          href="https://www.webtoons.com/p/community/es/u/at7studio"
+          class="hover:text-green-400 transition"
+          ><i class="fa-solid fa-store"></i
+        ></a>
+        <div class="navbar-divider"></div>
+        <a href="#" class="hover:text-green-400 transition"
+          ><i class="fa-solid fa-moon"></i
+        ></a>
+        <a href="#" class="hover:text-green-400 transition"
+          ><i class="fa-solid fa-globe"></i
+        ></a>
+      </div>
     </nav>
 
     <!-- Slider 1 -->
-    <div id="slider-container-1" class="slider-container" style="margin-top: 4rem; ">
-        <div class="slider">
-            <div class="slide"><img src="images/imagen1.jpg" alt="Imagen 1"></div>
-            <div class="slide"><img src="images/imagen2.png" alt="Imagen 2"></div>
-            <div class="slide"><img src="images/imagen3.jpg" alt="Imagen 3"></div>
-        </div>
+    <div
+      id="slider-container-1"
+      class="slider-container"
+      style="margin-top: 4rem"
+    >
+      <div class="slider">
+        <div class="slide"><img src="images/imagen1.jpg" alt="Imagen 1" /></div>
+        <div class="slide"><img src="images/imagen2.png" alt="Imagen 2" /></div>
+        <div class="slide"><img src="images/imagen3.jpg" alt="Imagen 3" /></div>
+      </div>
 
-        <!-- 🔹 Contenido en la parte inferior izquierda -->
-        <div class="slider-content">
-            <h1>POWERED BY CREATIVITY</h1>
-            <p>The artistic world's revolution has arrived</p>
-            <button id="contact-btn">Contact us</button>
-        </div>
+      <!-- 🔹 Contenido en la parte inferior izquierda -->
+      <div class="slider-content">
+        <h1>POWERED BY CREATIVITY</h1>
+        <p>The artistic world's revolution has arrived</p>
+        <button id="contact-btn">Contact us</button>
+      </div>
 
-        <!-- 🔹 Botones de Navegación -->
-        <button class="slider-btn left">❮</button>
-        <button class="slider-btn right">❯</button>
+      <!-- 🔹 Botones de Navegación -->
+      <button class="slider-btn left">❮</button>
+      <button class="slider-btn right">❯</button>
 
-        <!-- 🔹 Indicadores del Slider -->
-        <div class="indicator-container">
-            <div class="indicator active" data-index="0"></div>
-            <div class="indicator" data-index="1"></div>
-            <div class="indicator" data-index="2"></div>
-        </div>
+      <!-- 🔹 Indicadores del Slider -->
+      <div class="indicator-container">
+        <div class="indicator active" data-index="0"></div>
+        <div class="indicator" data-index="1"></div>
+        <div class="indicator" data-index="2"></div>
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>

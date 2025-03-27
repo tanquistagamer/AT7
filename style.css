@@ -599,5 +599,57 @@ h1 {
 .carousel-indicators .indicator.active {
     background-color: #00ff00 !important;
 }
+/* Estilos para la sección Help Services */
+.help-section {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 20px;
+    color: #fff;
+}
 
+.help-section h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
 
+.help-section h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-top: 0;
+}
+
+.help-section img {
+    width: 100%;
+    height: 20%;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .help-section h1 {
+        font-size: 2rem;
+    }
+
+    .help-section h2 {
+        font-size: 1.2rem;
+    }
+}
+/* Sección de fuente de escritura de la imagén superior */
+.help-section h1 {
+    font-size: 3em;
+    font-family: EthnocentricRegular;
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+.help-section h2 {
+    font-size: 1em;
+    font-family: EthnocentricRegular;
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
