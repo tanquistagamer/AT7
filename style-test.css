@@ -1,0 +1,156 @@
+/* Estilos generales */
+* {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 600;
+}
+
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 3em;
+    font-family: EthnocentricRegular;
+    font-weight: bold; 
+    text-transform: uppercase; 
+}
+
+/* Estilos para las líneas verdes */
+.navbar-divider {
+    height: 40px; 
+    width: 2px; 
+    background-color: #00ff00; 
+    margin: 0 20px; 
+}
+
+/* Slider */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Slider content */
+.slider-content {
+    position: absolute;
+    bottom: 13%; 
+    left: 100px;
+    text-align: left;
+    color: white;
+    max-width: 50%;
+    z-index: 10;
+}
+
+.slider-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.slider-content button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 40px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.slider-content button:hover {
+    background: #e0e0e0;
+    transform: scale(.9);
+}
+
+.slider-content p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px black;
+}
+
+/* Botones de Slider */
+.slider-btn {
+    padding: 15px;
+    background-color: black; 
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+}
+
+.slider-btn.left {
+    left: 20px;
+}
+
+.slider-btn.right {
+    right: 20px;
+}
+
+/* Slide o Diapositiva */
+.slide {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Indiciadores de Slider */
+.indicator-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: gray;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.indicator.active {
+    background-color: limegreen;
+}
