@@ -64,12 +64,12 @@
         <div id="slider-content">
             <h1>POWERED BY CREATIVITY</h1>
             <p>The artistic world's revolution has arrived</p>
-            <button id="contact-btn">Contact us</button>
+            <button id="contact-btn"class="sliderButton">Contact us</button>
         </div>
 
         <!-- 🔹 Botones de Navegación -->
-        <button id="prevBtn">❮</button>
-        <button id="nextBtn">❯</button>
+        <button id="prevBtn"class="sliderButton">❮</button>
+        <button id="nextBtn"class="sliderButton">❯</button>
 
         <!-- 🔹 Indicadores del Slider -->
         <div id="indicators">
@@ -113,7 +113,7 @@
 <section id="values">
     <h2>VALUES</h2>
     <div id="values-slider-container">
-        <button id="values-prevBtn" class="slider-btn"><img src="images/logo.png" alt="Prev"></button>
+        <button id="values-prevBtn" class="slider-btn sliderButton"><img src="images/logo.png" alt="Prev"></button>
         
         <div id="values-slider-wrapper">
             <div id="values-slider">
@@ -149,7 +149,7 @@
             </div>
         </div>
 
-        <button id="values-nextBtn" class="slider-btn"><img src="images/logo-7.png" alt="Next"></button>
+        <button id="values-nextBtn" class="slider-btn sliderButton"><img src="images/logo-7.png" alt="Next"></button>
     </div>
     <div id="values-indicators">
         <div class="indicator active" data-index="0"></div>
@@ -223,8 +223,8 @@
             </div>
         </div>
 
-        <button id="prev-slide" class="carousel-btn">&#10094;</button>
-        <button id="next-slide" class="carousel-btn">&#10095;</button>
+        <button id="prev-slide" class="carousel-btn sliderButton">&#10094;</button>
+        <button id="next-slide" class="carousel-btn sliderButton">&#10095;</button>
 
         <div class="carousel-indicators">
             <span class="indicator active" data-slide="0"></span>
@@ -235,8 +235,19 @@
 <div class="help-section">
     <h1>DO YOU NEED HELP? WE GOT YOU</h1>
     <h2>SERVICES</h2>
-    <img src="images/imagen1.jpg" alt="Imagen relacionada con ayuda">
-</div>
-</section>
+    <img src="images/about-image.png" alt="Imagen relacionada con ayuda">
+
+
+<div id="animation-container"></div>
+
+<script>
+  fetch('animation.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('animation-container').innerHTML = data;
+    });
+</script>
+
 </body>
 </html>
+
