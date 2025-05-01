@@ -652,3 +652,12 @@ h1 {
     font-weight: bold; 
     text-transform: uppercase; 
 }
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  

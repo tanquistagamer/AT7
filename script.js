@@ -1,235 +1,179 @@
+
 document.addEventListener("DOMContentLoaded", function () {
-    let slider = document.getElementById("slider");
-    let slides = document.querySelectorAll(".slide");
-    let prevBtn = document.getElementById("prevBtn");
-    let nextBtn = document.getElementById("nextBtn");
-    let indicators = document.querySelectorAll(".indicator");
+    // === MAIN SLIDER ===
+    const sliderMain = document.getElementById("slider");
+    const slides = document.querySelectorAll(".slide");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const indicators = document.querySelectorAll(".indicator");
     let index = 0;
-    let totalSlides = slides.length;
     let autoSlide;
-
-    // Función para actualizar el slider
+  
     function updateSlider() {
-        slider.style.transform = `translateX(-${index * 100}vw)`;
-        updateIndicators();
+      sliderMain.style.transform = `translateX(-${index * 100}vw)`;
+      indicators.forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+      });
     }
-
-    // Función para actualizar los indicadores
-    function updateIndicators() {
-        indicators.forEach((dot, i) => {
-            console.log(i + " is the new active.");
-            dot.classList.remove("active");
-            if (i === index) {
-                dot.classList.add("active");
-            }
-        });
-    }
-
-    // Función para mover al slide anterior
-    prevBtn.addEventListener("click", function () {
-        index = (index > 0) ? index - 1 : totalSlides - 1;
-        updateSlider();
-        resetAutoSlide();
-    });
-
-    // Función para mover al slide siguiente
-    nextBtn.addEventListener("click", function () {
-        index = (index < totalSlides - 1) ? index + 1 : 0;
-        updateSlider();
-        resetAutoSlide();
-    });
-
-    // Hacer que los indicadores sean interactivos
-    indicators.forEach(dot => {
-        dot.addEventListener("click", function () {
-            index = parseInt(this.getAttribute("data-index"));
-            //console.log("Click on " + index + " indicator.");
-            updateSlider();
-            resetAutoSlide();
-        });
-    });
-
-    // Función para iniciar el cambio automático cada 7 segundos
+  
     function startAutoSlide() {
-        autoSlide = setInterval(() => {
-            index = (index + 1) % totalSlides;
-            updateSlider();
-        }, 7000);
+      autoSlide = setInterval(() => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+      }, 7000);
     }
-
-    // Función para resetear el temporizador cuando el usuario interactúa
+  
     function resetAutoSlide() {
-        clearInterval(autoSlide);
-        startAutoSlide();
+      clearInterval(autoSlide);
+      startAutoSlide();
     }
-
-    // Iniciar el slider automático
-    startAutoSlide();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    let valuesSlider = document.getElementById("values-slider");
-    let valuesPrevBtn = document.getElementById("values-prevBtn");
-    let valuesNextBtn = document.getElementById("values-nextBtn");
-    let valuesIndicators = document.querySelectorAll("#values-indicators .indicator");
+  
+    if (sliderMain) {
+      updateSlider();
+      startAutoSlide();
+  
+      prevBtn?.addEventListener("click", () => {
+        index = (index > 0) ? index - 1 : slides.length - 1;
+        updateSlider();
+        resetAutoSlide();
+      });
+  
+      nextBtn?.addEventListener("click", () => {
+        index = (index + 1) % slides.length;
+        updateSlider();
+        resetAutoSlide();
+      });
+  
+      indicators.forEach(dot => {
+        dot.addEventListener("click", () => {
+          index = parseInt(dot.dataset.index);
+          updateSlider();
+          resetAutoSlide();
+        });
+      });
+    }
+  
+    // === VALUES CAROUSEL ===
+    const valuesSlider = document.getElementById("values-slider");
+    const valuesPrevBtn = document.getElementById("values-prevBtn");
+    const valuesNextBtn = document.getElementById("values-nextBtn");
+    const valuesIndicators = document.querySelectorAll("#values-indicators .indicator");
     let valuesIndex = 0;
-    let totalValuesGroups = 4; // Debe coincidir con el número de indicadores
-
+    const totalValuesGroups = valuesIndicators.length;
+  
     function updateValuesSlider() {
-        console.log("Moviendo a grupo: " + valuesIndex);
-        valuesSlider.style.transform = `translateX(-${valuesIndex * 100}%)`;
-        updateValuesIndicators();
+      valuesSlider.style.transform = `translateX(-${valuesIndex * 100}%)`;
+      valuesIndicators.forEach((dot, i) => {
+        dot.classList.toggle("active", i === valuesIndex);
+      });
     }
-
-    function updateValuesIndicators() {
-        valuesIndicators.forEach((dot, i) => {
-            dot.classList.remove("active");
-            if (i === valuesIndex) {
-                dot.classList.add("active");
-            }
-        });
-    }
-
-    valuesPrevBtn.addEventListener("click", function () {
-        console.log("Botón Anterior Clicked");
-        valuesIndex = valuesIndex > 0 ? valuesIndex - 1 : totalValuesGroups - 1;
+  
+    if (valuesSlider) {
+      updateValuesSlider();
+  
+      valuesPrevBtn?.addEventListener("click", () => {
+        valuesIndex = (valuesIndex > 0) ? valuesIndex - 1 : totalValuesGroups - 1;
         updateValuesSlider();
-    });
-
-    valuesNextBtn.addEventListener("click", function () {
-        console.log("Botón Siguiente Clicked");
-        valuesIndex = valuesIndex < totalValuesGroups - 1 ? valuesIndex + 1 : 0;
-        updateValuesSlider();
-    });
-
-    valuesIndicators.forEach(dot => {
-        dot.addEventListener("click", function () {
-            valuesIndex = parseInt(this.getAttribute("data-index"));
-            updateValuesSlider();
-        });
-    });
-// Función para iniciar el cambio automático cada 7 segundos
-    setInterval(() => {
+      });
+  
+      valuesNextBtn?.addEventListener("click", () => {
         valuesIndex = (valuesIndex + 1) % totalValuesGroups;
         updateValuesSlider();
-    }, 7000);
-});
-let slideIndex = 0;
-const slides = document.querySelectorAll(".carousel-item");
-const indicators = document.querySelectorAll(".indicator");
-
-function showSlides(index) {
-    slides.forEach((slide, i) => {
-        slide.style.display = (i === index) ? "block" : "none";
-        slide.style.opacity = (i === index) ? "1" : "0";
-        indicators[i].classList.toggle("active", i === index);
-    });
-}
-
-function moveSlide(step) {
-    slideIndex += step;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    showSlides(slideIndex);
-}
-
-function currentSlide(index) {
-    slideIndex = index;
-    showSlides(slideIndex);
-}
-document.addEventListener("DOMContentLoaded", function () {
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prev = document.getElementById('prev-slide');
-    const next = document.getElementById('next-slide');
-    const indicators = document.querySelectorAll('.indicator');
-    let currentIndex = 0;
-    let interval;
-
-    function showSlide(index) {
-        slides.forEach((slide, idx) => {
-            slide.classList.remove('active');
-            indicators[idx].classList.remove('active');
-            if (idx === index) {
-                slide.classList.add('active');
-                indicators[idx].classList.add('active');
-            }
+      });
+  
+      valuesIndicators.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          valuesIndex = i;
+          updateValuesSlider();
         });
+      });
+  
+      setInterval(() => {
+        valuesIndex = (valuesIndex + 1) % totalValuesGroups;
+        updateValuesSlider();
+      }, 7000);
     }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
+  
+    // === PROJECT CAROUSEL ===
+    const projectSlides = document.querySelectorAll('.carousel-slide');
+    const prevProject = document.getElementById('prev-slide');
+    const nextProject = document.getElementById('next-slide');
+    const projectIndicators = document.querySelectorAll('.carousel-indicators .indicator');
+    let projectIndex = 0;
+  
+    function showProjectSlide(index) {
+      projectSlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        projectIndicators[i].classList.toggle("active", i === index);
+      });
     }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
+  
+    function nextProjectSlide() {
+      projectIndex = (projectIndex + 1) % projectSlides.length;
+      showProjectSlide(projectIndex);
     }
-
-    next.addEventListener('click', nextSlide);
-    prev.addEventListener('click', prevSlide);
-
-    indicators.forEach(indicator => {
-        indicator.addEventListener('click', () => {
-            currentIndex = parseInt(indicator.dataset.slide);
-            showSlide(currentIndex);
+  
+    function prevProjectSlide() {
+      projectIndex = (projectIndex - 1 + projectSlides.length) % projectSlides.length;
+      showProjectSlide(projectIndex);
+    }
+  
+    if (projectSlides.length > 0) {
+      showProjectSlide(projectIndex);
+  
+      prevProject?.addEventListener("click", prevProjectSlide);
+      nextProject?.addEventListener("click", nextProjectSlide);
+  
+      projectIndicators.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          projectIndex = i;
+          showProjectSlide(projectIndex);
         });
-    });
-
-    function startAutoSlide() {
-        interval = setInterval(nextSlide, 7000);
-    }
-
-    function resetInterval() {
-        clearInterval(interval);
-        startAutoSlide();
-    }
-
-    [next, prev, ...indicators].forEach(control => {
-        control.addEventListener('click', resetInterval);
-    });
-
-    startAutoSlide();
-});
-document.addEventListener("DOMContentLoaded", function () {
-    let slides = document.querySelectorAll(".carousel-slide");
-    let indicators = document.querySelectorAll(".carousel-indicators .indicator");
-    let currentSlide = 0;
-    const slideInterval = 7000;
-  
-    function showSlide(index) {
-      slides.forEach((slide, idx) => {
-        slide.classList.toggle("active", idx === index);
       });
   
-      indicators.forEach((indicator, idx) => {
-        indicator.classList.toggle("active", idx === index);
-      });
+      setInterval(nextProjectSlide, 7000);
     }
   
-    document.getElementById("prev-slide").addEventListener("click", function () {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    });
-  
-    document.getElementById("next-slide").addEventListener("click", function () {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    });
-  
-    indicators.forEach((indicator, idx) => {
-      indicator.addEventListener("click", function () {
-        currentSlide = idx;
-        showSlide(currentSlide);
+    // === DYNAMIC CONTENT: ANIMATION & CARRUSEL ===
+    fetch('animation.html')
+      .then(res => res.text())
+      .then(data => {
+        const container = document.getElementById('animation-container');
+        if (container) container.innerHTML = data;
       });
-    });
   
-    setInterval(function () {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }, slideInterval);
+      fetch('carrusel.html')
+      .then(res => res.text())
+      .then(data => {
+        const carruselContainer = document.getElementById('carrusel-container');
+        if (carruselContainer) {
+          carruselContainer.innerHTML = data;
+    
+          setTimeout(() => {
+            const slider = document.getElementById('carouselSlider');
+            const slideLeft = document.getElementById('carouselLeft');
+            const slideRight = document.getElementById('carouselRight');
+    
+            if (!slider) return;
+    
+            slideLeft?.addEventListener('click', () => {
+              slider.scrollBy({ left: -320, behavior: 'smooth' });
+            });
+    
+            slideRight?.addEventListener('click', () => {
+              slider.scrollBy({ left: 320, behavior: 'smooth' });
+            });
+    
+            setInterval(() => {
+              if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 5) {
+                slider.scrollTo({ left: 0, behavior: 'smooth' });
+              } else {
+                slider.scrollBy({ left: 320, behavior: 'smooth' });
+              }
+            }, 3500);
+          }, 100);
+        }
+      });
+    });    
   
-    showSlide(currentSlide);
-  });
-
 
