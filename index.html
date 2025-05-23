@@ -243,7 +243,18 @@
   
   <div id="carrusel-container" class="mt-32 bg-black text-white py-12"></div>
   
+  <div id="jointheteam-container" class="mt-32"></div>
+    
+  <div id="footer-container"></div>
+
+    <script>
+    fetch('footer.html')
+        .then(res => res.text())
+        .then(html => {
+        document.getElementById('footer-container').innerHTML = html;
+        });
+    </script>
+
   <script src="script.js"></script>
   </body>
   </html>
-  
